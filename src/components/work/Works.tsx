@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { projectsData, projectsNav } from './Data';
 import WorkItems from './WorkItems';
@@ -8,7 +7,6 @@ interface Project {
   category: string;
   image: string;
   title: string;
-  [key: string]: any;
 }
 
 const Works = () => {
@@ -23,7 +21,6 @@ const Works = () => {
       const newProjects = projectsData.filter((project) => {
         return project.category.toLowerCase() === item.name;
       });
-
       setProjects(newProjects);
     }
   }, [item]);
@@ -35,7 +32,6 @@ const Works = () => {
     setItem({
       name: e.currentTarget.textContent!.toLowerCase(),
     });
-
     setActive(index);
   };
 
@@ -46,9 +42,7 @@ const Works = () => {
           return (
             <span
               onClick={(e) => handleClick(e, index)}
-              className={`${
-                active === index ? 'active-work' : ''
-              } work__item`}
+              className={`${active === index ? 'active-work' : ''} work__item`}
               key={index}
             >
               {item.name}
@@ -58,13 +52,12 @@ const Works = () => {
       </div>
 
       <div className="work__container container grid">
-        {projects.map((item) => {
-          return <WorkItems item={item} key={item.id} />;
-        })}
+        {projects.map((item) => (
+          <WorkItems item={item} key={item.id} />
+        ))}
       </div>
     </div>
   );
 };
 
 export default Works;
-```
