@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './skills.css';
 import Frontend from './Frontend';
 import Uiux from './Uiux';
