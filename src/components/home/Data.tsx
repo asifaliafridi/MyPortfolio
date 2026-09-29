@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Hand from '../../assets/hand.svg';
 
 const Data = () => {
