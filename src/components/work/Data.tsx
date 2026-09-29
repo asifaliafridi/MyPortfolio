@@ -1,4 +1,3 @@
-```tsx
 import work1 from "../../assets/portfolio-2.jpg";
 import work2 from "../../assets/portfolio-3.jpg";
 import work5 from "../../assets/portfolio-5.jpg";
@@ -46,17 +45,8 @@ export const projectsData = [
 ];
 
 export const projectsNav = [
-  {
-    name: 'all',
-  },
-  {
-    name: 'web',
-  },
-  {
-    name: 'app',
-  },
-  {
-    name: 'design',
-  },
+  { name: 'all' },
+  { name: 'web' },
+  { name: 'app' },
+  { name: 'design' },
 ];
-```
