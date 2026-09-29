@@ -1,11 +1,10 @@
+```tsx
 import React from 'react';
-import { projectsData } from './Data';
-import { projectsNav } from './Data';
+import { projectsData, projectsNav } from './Data';
 import WorkItems from './WorkItems';
 
 interface Project {
   id: string | number;
-  name: string;
   category: string;
   image: string;
   title: string;
@@ -13,44 +12,59 @@ interface Project {
 }
 
 const Works = () => {
-
-  const [item, setItem] = React.useState({name: 'all'});
+  const [item, setItem] = React.useState({ name: 'all' });
   const [projects, setProjects] = React.useState<Project[]>([]);
   const [active, setActive] = React.useState(0);
 
   React.useEffect(() => {
-    if(item.name === 'all') {
+    if (item.name === 'all') {
       setProjects(projectsData);
     } else {
       const newProjects = projectsData.filter((project) => {
         return project.category.toLowerCase() === item.name;
       });
+
       setProjects(newProjects);
     }
   }, [item]);
 
-  const handleClick = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, index: number) => {
-    setItem({name: e.currentTarget.textContent!.toLowerCase()});
+  const handleClick = (
+    e: React.MouseEvent<HTMLSpanElement>,
+    index: number
+  ) => {
+    setItem({
+      name: e.currentTarget.textContent!.toLowerCase(),
+    });
+
     setActive(index);
-  }
+  };
 
   return (
     <div>
-        <div className="work__filters">
+      <div className="work__filters">
         {projectsNav.map((item, index) => {
-            return <span 
-            onClick={(e) => { handleClick(e, index);}} 
-            className={`${active === index ? 'active-work' : ""} work__item`} key={index}>{item.name}</span>
+          return (
+            <span
+              onClick={(e) => handleClick(e, index)}
+              className={`${
+                active === index ? 'active-work' : ''
+              } work__item`}
+              key={index}
+            >
+              {item.name}
+            </span>
+          );
         })}
-    </div>
+      </div>
 
-    <div className="work__container container grid">
+      <div className="work__container container grid">
         {projects.map((item) => {
-            return <WorkItems item={item} key={item.id}/>
+          return <WorkItems item={item} key={item.id} />;
         })}
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Works
+export default Works;
+```
