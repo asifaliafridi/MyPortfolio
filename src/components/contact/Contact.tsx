@@ -14,7 +14,7 @@ const Contact = () => {
         const formData = new FormData(form);
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/asifaliafridi1@gmail.com', {
+            const response = await fetch('https://formspree.io/f/moevryge', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -93,9 +93,7 @@ const Contact = () => {
                         className="contact__form"
                     >
                         <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
-                        <input type="hidden" name="_captcha" value="true" />
-                        <input type="hidden" name="_template" value="table" />
-
+                        
                         <div className="contact__form-div">
                             <label className="contact__form-tag">Name</label>
                             <input
