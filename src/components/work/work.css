@@ -22,7 +22,7 @@
 
 .work__container {
   grid-template-columns: repeat(3, max-content);
-  gap: 3rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .work__img {
-    width: 295px;
+    width: 265px;
     border-radius: 1rem;
     margin-bottom: var(--mb-1);
 }
