@@ -1,6 +1,42 @@
+import { useState } from 'react';
 import './contact.css';
 
 const Contact = () => {
+    const [status, setStatus] = useState('');
+    const [sending, setSending] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setSending(true);
+        setStatus('');
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/asifaliafridi1@gmail.com', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                },
+                body: formData,
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success !== false) {
+                form.reset();
+                setStatus('Message sent successfully!');
+            } else {
+                setStatus('Something went wrong. Please try again.');
+            }
+        } catch {
+            setStatus('Something went wrong. Please try again.');
+        } finally {
+            setSending(false);
+        }
+    };
+
     return (
         <section className="contact section" id="contact">
             <h2 className="section__title">Get in Touch</h2>
@@ -53,8 +89,7 @@ const Contact = () => {
                     <h3 className="contact__title">Write Me Your Project</h3>
 
                     <form
-                        action="https://formsubmit.co/asifaliafridi1@gmail.com"
-                        method="POST"
+                        onSubmit={handleSubmit}
                         className="contact__form"
                     >
                         <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
@@ -95,8 +130,8 @@ const Contact = () => {
                             ></textarea>
                         </div>
 
-                        <button type="submit" className="button button--flex">
-                            Send Message
+                        <button type="submit" className="button button--flex" disabled={sending}>
+                            {sending ? 'Sending...' : 'Send Message'}
                             <svg
                                 className="button__icon"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -115,6 +150,8 @@ const Contact = () => {
                                 ></path>
                             </svg>
                         </button>
+
+                        {status && <span className="contact__form-status">{status}</span>}
                     </form>
                 </div>
             </div>
