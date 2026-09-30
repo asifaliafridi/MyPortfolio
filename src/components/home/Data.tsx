@@ -7,7 +7,7 @@ const Data = () => {
             <img src={Hand} alt="" className="home__hand" />
         </h1>
         <h3 className="home__subtitle">UI/UX Designer & Developer</h3>
-        <p className="home__description">I am a UI/UX designer and developer focused on creating engaging, user-friendly digital experiences. I combine thoughtful design with front-end development to build responsive, functional, and visually appealing web applications.</p>
+        <p className="home__description">I am a UI/UX designer and developer creating user-friendly digital experiences. I combine design and development to build responsive, functional, and visually appealing web applications.</p>
         <a href="#contact" className="button button--flex">Hire Me
             <svg
                   className="button__icon"
