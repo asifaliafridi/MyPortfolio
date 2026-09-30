@@ -155,13 +155,15 @@ const Contact = () => {
                         {status && <span className="contact__form-status">{status}</span>}
 
                         {showSuccess && (
-                            <div className="contact__success-popup" role="status" aria-live="polite">
-                                <div className="contact__success-icon">
-                                    <i className="uil uil-check"></i>
+                            <div className="contact__success-overlay" role="status" aria-live="polite">
+                                <div className="contact__success-popup">
+                                    <div className="contact__success-icon">
+                                        <i className="uil uil-check"></i>
+                                    </div>
+                                    <h3>Message Sent!</h3>
+                                    <p>Your message has been sent successfully.</p>
+                                    <button type="button" onClick={() => setShowSuccess(false)}>Close</button>
                                 </div>
-                                <h3>Message Sent!</h3>
-                                <p>Your message has been sent successfully.</p>
-                                <button type="button" onClick={() => setShowSuccess(false)}>Close</button>
                             </div>
                         )}
                     </form>
