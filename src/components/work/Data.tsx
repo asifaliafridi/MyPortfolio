@@ -1,46 +1,87 @@
-import work1 from "../../assets/portfolio-2.jpg";
-import work2 from "../../assets/portfolio-3.jpg";
-import work5 from "../../assets/portfolio-5.jpg";
-import work7 from "../../assets/portfolio-7.jpg";
-import work9 from "../../assets/portfolio-9.jpg";
-import work10 from "../../assets/portfolio-10.jpg";
-
 export const projectsData = [
   {
     id: 1,
-    image: work1,
-    title: 'Web design',
-    category: 'web',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/68f0c2166660359.Y3JvcCwxMjI3LDk2MCwyNyww.jpeg',
+    title: 'Dev Territory Logo Design',
+    category: 'design',
+    link: 'https://www.behance.net/gallery/166660359/Dev-Territory-Logo-Design',
   },
   {
     id: 2,
-    image: work2,
-    title: 'App design',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/cb7def142063511.Y3JvcCwxNTM0LDEyMDAsMzQsMA.png',
+    title: 'Voice Recorder Interface',
     category: 'app',
+    link: 'https://www.behance.net/gallery/142063511/Voice-Recorder-Interface',
   },
   {
     id: 3,
-    image: work5,
-    title: 'Dashboard design',
-    category: 'design',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/152b98139705745.Y3JvcCwyMzAxLDE4MDAsNTEsMA.png',
+    title: 'Gym Black & White Landing Page Design',
+    category: 'web',
+    link: 'https://www.behance.net/gallery/139705745/Gym-Black-White-Landing-Page-Design',
   },
   {
     id: 4,
-    image: work7,
-    title: 'App design',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/26a89c133894251.Y3JvcCwxOTE3LDE1MDAsNDIsMA.png',
+    title: 'Speedometer App Design',
     category: 'app',
+    link: 'https://www.behance.net/gallery/133894251/Speedometer-App-Design',
   },
   {
     id: 5,
-    image: work9,
-    title: 'App design',
-    category: 'app',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/767f53139797103.Y3JvcCwxNTM0LDEyMDAsMzQsMA.png',
+    title: 'eCommerce Landing Page Design',
+    category: 'web',
+    link: 'https://www.behance.net/gallery/139797103/eCommerce-Landing-Page-Design',
   },
   {
     id: 6,
-    image: work10,
-    title: 'Web design',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/097de9138001907.Y3JvcCwxNjAwLDEyNTEsMCwxMQ.png',
+    title: 'Affiliate Page Design',
     category: 'web',
+    link: 'https://www.behance.net/gallery/138001907/affiliate-page-design',
+  },
+  {
+    id: 7,
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/8b4c23126351993.Y3JvcCwxODAwLDE0MDcsMCw3ODQ.png',
+    title: 'CSS Campaign',
+    category: 'design',
+    link: 'https://www.behance.net/gallery/126351993/CSS-Campaign',
+  },
+  {
+    id: 8,
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/4bdc37131621941.6536bd5eb4058.png',
+    title: 'Weather App UI Design',
+    category: 'app',
+    link: 'https://www.behance.net/gallery/131621941/Weather-app-UI-design',
+  },
+  {
+    id: 9,
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/065dfb138001561.Y3JvcCwxNTM0LDEyMDAsMzQsMA.png',
+    title: 'Job Website Landing Page',
+    category: 'web',
+    link: 'https://www.behance.net/gallery/138001561/Job-website-landing-page',
+  },
+  {
+    id: 10,
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/b2d2a7134445679.Y3JvcCwxOTMxLDE1MTEsMzMsMA.png',
+    title: 'Solar Energy Landing Page',
+    category: 'web',
+    link: 'https://www.behance.net/gallery/134445679/Solar-Energy-landing-page',
+  },
+  {
+    id: 11,
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/714195126350569.Y3JvcCwxODAwLDE0MDcsMCw3ODQ.png',
+    title: 'Social Media Campaign',
+    category: 'design',
+    link: 'https://www.behance.net/gallery/126350569/Social-Media-campaign',
+  },
+  {
+    id: 12,
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/f988f9137038213.Y3JvcCwxNTM0LDEyMDAsMzQsMA.png',
+    title: 'Online Learning App',
+    category: 'app',
+    link: 'https://www.behance.net/gallery/137038213/Online-learning-app',
   },
 ];
 
