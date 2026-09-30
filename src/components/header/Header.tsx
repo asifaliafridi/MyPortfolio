@@ -3,14 +3,12 @@ import './header.css';
 import Logo from '../../assets/logo.png';
 
 const Header = () => {
-  /*========== change background header ==========*/
   window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
     if (this.scrollY >= 80) header?.classList.add("scroll-header");
     else header?.classList.remove("scroll-header");
   });
 
-  /*========== Toggle Menu ==========*/
   const [Toggle, showMenu] = React.useState(false);
   const [activeNav, setActiveNav] = useState("#home");
 
@@ -22,6 +20,7 @@ const Header = () => {
         </a>
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
+          <button className="nav__close" onClick={() => showMenu(false)} aria-label="Close navigation menu">×</button>
           <ul className="nav__list grid">
             <li className="nav__item"><a href="#home" onClick={() => { setActiveNav('#home'); showMenu(false); }} className={activeNav === "#home" ? "nav__link active-link" : "nav__link"}><i className="uil uil-estate nav__icon"></i> Home</a></li>
             <li className="nav__item"><a href="#about" onClick={() => { setActiveNav('#about'); showMenu(false); }} className={activeNav === "#about" ? "nav__link active-link" : "nav__link"}><i className="uil uil-user nav__icon"></i> About</a></li>
@@ -30,12 +29,11 @@ const Header = () => {
             <li className="nav__item"><a href="#portfolio" onClick={() => { setActiveNav('#portfolio'); showMenu(false); }} className={activeNav === "#portfolio" ? "nav__link active-link" : "nav__link"}><i className="uil uil-scenery nav__icon"></i> Portfolio</a></li>
             <li className="nav__item"><a href="#contact" onClick={() => { setActiveNav('#contact'); showMenu(false); }} className={activeNav === "#contact" ? "nav__link active-link" : "nav__link"}><i className="uil uil-message nav__icon"></i> Contact</a></li>
           </ul>
-          <i className="uil uil-times nav__close" onClick={() => showMenu(!Toggle)}></i>
         </div>
 
-        <div className="nav__toggle" onClick={() => showMenu(!Toggle)} aria-label="Toggle navigation menu">
+        <button className="nav__toggle" onClick={() => showMenu(!Toggle)} aria-label="Toggle navigation menu">
           <i className="uil uil-bars"></i>
-        </div>
+        </button>
       </nav>
     </header>
   );
