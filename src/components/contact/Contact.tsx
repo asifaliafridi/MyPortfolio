@@ -4,11 +4,13 @@ import './contact.css';
 const Contact = () => {
     const [status, setStatus] = useState('');
     const [sending, setSending] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSending(true);
         setStatus('');
+        setShowSuccess(false);
 
         const form = e.currentTarget;
         const formData = new FormData(form);
@@ -26,7 +28,8 @@ const Contact = () => {
 
             if (response.ok && data.success !== false) {
                 form.reset();
-                setStatus('Message sent successfully!');
+                setStatus('');
+                setShowSuccess(true);
             } else {
                 setStatus('Something went wrong. Please try again.');
             }
@@ -150,6 +153,17 @@ const Contact = () => {
                         </button>
 
                         {status && <span className="contact__form-status">{status}</span>}
+
+                        {showSuccess && (
+                            <div className="contact__success-popup" role="status" aria-live="polite">
+                                <div className="contact__success-icon">
+                                    <i className="uil uil-check"></i>
+                                </div>
+                                <h3>Message Sent!</h3>
+                                <p>Your message has been sent successfully.</p>
+                                <button type="button" onClick={() => setShowSuccess(false)}>Close</button>
+                            </div>
+                        )}
                     </form>
                 </div>
             </div>
