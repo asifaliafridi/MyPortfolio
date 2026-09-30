@@ -12,18 +12,11 @@ const WorkItems = ({ item }: { item: WorkItem }) => {
 
   React.useEffect(() => {
     if (!showPreview) return;
-
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setShowPreview(false);
     };
-
     document.addEventListener('keydown', handleKeyDown);
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = '';
-    };
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [showPreview]);
 
   return (
@@ -35,8 +28,8 @@ const WorkItems = ({ item }: { item: WorkItem }) => {
       </button>
 
       {showPreview && (
-        <div className="work__modal" onClick={() => setShowPreview(false)} role="dialog" aria-modal="true" aria-label={item.title}>
-          <div className="work__modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="work__modal" role="dialog" aria-modal="true" aria-label={item.title}>
+          <div className="work__modal-content">
             <button type="button" className="work__modal-close" onClick={() => setShowPreview(false)} aria-label="Close image preview">×</button>
             <img src={item.image} alt={item.title} className="work__modal-img" />
           </div>
