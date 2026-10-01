@@ -1,6 +1,6 @@
 import './about.css';
 import AboutImg from '../../assets/about.jpg';
-import CV from '../../assets/asif-Cv.pdf';
+import CV from '../../assets/Asif_Khan_UIUX_Product_Designer_Resume.pdf';
 import Info from './Info';
 
 const About = () => {
